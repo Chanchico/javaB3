@@ -1,3 +1,5 @@
+import javax.swing.text.Style;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Grid {
@@ -6,6 +8,9 @@ public class Grid {
 
      final Cell[][] grid ;
 
+     List<Cell> cellsToKill = new ArrayList<>();
+     List<Cell> cellsToLive = new ArrayList<>();
+    List<Cell> stayAlive = new ArrayList<>();
     Grid(int x, int y){
         width = x;
         height = y;
@@ -18,10 +23,23 @@ public class Grid {
     }
 
     void printGrid(){
+        System.out.print("   ");
+        for (int j = 0; j < width; j++){
+            System.out.print(j);
+            if (j <9){
+                System.out.print(" ");
+            }
+        }
 
-        for (int i = 0; i < width; i++){
-            for (int j = 0; j < height; j++){
-                System.out.print( grid[i][j].state ?  "x" : "o" );
+        System.out.println("");
+        for (int i = 0; i < height; i++){
+
+            System.out.print(i);
+            if (i < 9){
+                System.out.print(" ");
+            }
+            for (int j = 0; j < width; j++){
+                System.out.print(" "+ (grid[i][j].state ?  "x" : "o"));
             }
             System.out.println( "");
         }

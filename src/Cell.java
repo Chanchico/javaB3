@@ -13,4 +13,6 @@ public class Cell {
         this.state = true;
     }
 
+
+
 }

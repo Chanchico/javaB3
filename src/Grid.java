@@ -1,8 +1,10 @@
+import javax.swing.*;
 import javax.swing.text.Style;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Grid {
+public class Grid  {
     final int width;
     final int height;
 
@@ -18,15 +20,17 @@ public class Grid {
         for (int i = 0; i < x; i++){
             for (int j = 0; j < y; j++){
                 grid[i][j] = new Cell(false);
+
             }
         }
+
     }
 
     void printGrid(){
         System.out.print("   ");
         for (int j = 0; j < width; j++){
             System.out.print(j);
-            if (j <9){
+            if (j <= 9){
                 System.out.print(" ");
             }
         }
@@ -35,7 +39,7 @@ public class Grid {
         for (int i = 0; i < height; i++){
 
             System.out.print(i);
-            if (i < 9){
+            if (i <= 9){
                 System.out.print(" ");
             }
             for (int j = 0; j < width; j++){
